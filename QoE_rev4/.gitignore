@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+dataset/
+model_stp/
+saved_models/
+.idea/
+__pycache__/

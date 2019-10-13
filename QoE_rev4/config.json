@@ -1,0 +1,38 @@
+{
+	"Common":{
+		"logging_level": "INFO",
+		"ml": "training",
+		"save_dir": "saved_models",
+		"label_mapping":{
+			"good": 0,
+            "normal": 1,
+			"bad": 2
+		}
+	},
+	"dp": {
+		"raw_data": "./test1",
+        "group_size": 0,
+		"save_data": false,
+		"normalization": false
+	},
+	"training": {
+		"method": "RF",
+		"n_classes": 3,
+		"val_split": 0.8,
+		"epochs": 100,
+		"batch_size": 512
+	},
+	"RF":{
+		"feature_selection": false,
+		"feature_set": ["aiMcs", "aiNumOfPrb", "aiTbs", "aiCqi", "aiBler", "aiSinr", "aiAck", "aiNAck", "aiLoQueueTime",
+			"aiEth", "aiPdcpBuffH", "aiPdcpBuffL", "aiRlcBuff", "aiMod", "aiRMCqi", "aiCqiCmp"],
+		"n_estimators": 20,
+		"max_depth": 30,
+		"max_features": "log2",
+		"criterion": "entropy"
+	},
+	"testing":{
+		"model_path": "./model_rf-10-12.joblib"
+	}
+
+}
